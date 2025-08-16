@@ -55,7 +55,7 @@ const watermelon = new perishableProductProperties("Watermelon", 4.99, 2, "2025-
 
 const inventory = [apple, orange, watermelon]
 
-productProperties.applyDiscount(inventory, 0.1)
+// productProperties.applyDiscount(inventory, 0.1)
 
 // console.log("Discounted price:")
 // for (let p of inventory) {
@@ -80,5 +80,30 @@ class store {
         }
         return total
     }
+
+    findProductByName(name) {
+        for (let product of this.inventory) {
+            if (product.name.toLowerCase() === name.toLowerCase()) {
+                return product
+            }
+        }
+        return null
+    }
 }
 
+const myStore = new store("My fruit store")
+
+
+
+myStore.addProduct(apple)
+myStore.addProduct(orange)
+myStore.addProduct(watermelon)
+
+console.log(`Total inventory value: $${myStore.getInventoryValue().toFixed(2)}`);
+
+const found = myStore.findProductByName("Orange")
+if (found) {
+    console.log(`Found product: ${found.toString()}`);
+}else {
+    console.log("Product not found");
+}
