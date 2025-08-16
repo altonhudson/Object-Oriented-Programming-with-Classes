@@ -29,8 +29,13 @@ class perishableProductProperties extends productProperties {
     expirationDate() {
          return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expire}`
     }
+
+    toString() {
+        return `${super.toString()}, Expiration Date: ${this.expire}`
+    }
 }
 
 const perishable = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
 console.log(perishable.expirationDate());
+console.log(perishable.toString());
