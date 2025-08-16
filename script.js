@@ -52,10 +52,12 @@ const perishable = new perishableProductProperties("Orange", 1.99, 6, "2025-11-3
 const apple = new productProperties("Apple", 2.50, 4)
 const orange = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 const watermelon = new perishableProductProperties("Watermelon", 4.99, 2, "2025-09-30")
+const banana = new productProperties("Banana", .59, 8)
+const pineapple = new productProperties("Pineapple", 3.99, 3)
 
 const inventory = [apple, orange, watermelon]
 
-// productProperties.applyDiscount(inventory, 0.1)
+
 
 // console.log("Discounted price:")
 // for (let p of inventory) {
@@ -100,6 +102,10 @@ myStore.addProduct(orange)
 myStore.addProduct(watermelon)
 
 console.log(`Total inventory value: $${myStore.getInventoryValue().toFixed(2)}`);
+
+productProperties.applyDiscount(inventory, 0.15)
+
+console.log(`Total inventory value after discount: $${myStore.getInventoryValue().toFixed(2)}`);
 
 const found = myStore.findProductByName("Orange")
 if (found) {
