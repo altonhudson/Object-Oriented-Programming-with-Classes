@@ -11,7 +11,7 @@ class productProperties {
     }
     
     toString() {
-        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`;
+        return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`
     }
 
     static applyDiscount(products, discount) {
@@ -57,8 +57,28 @@ const inventory = [apple, orange, watermelon]
 
 productProperties.applyDiscount(inventory, 0.1)
 
-console.log("Discounted price:");
-for (let p of inventory) {
-    console.log(p.toString());
+// console.log("Discounted price:")
+// for (let p of inventory) {
+//     console.log(p.toString())
+// }
+
+
+class store {
+    constructor(name) {
+        this.name = name
+        this.inventory = []
+    }
+
+    addProduct(product) {
+        this.inventory.push(product);
+    }
+    
+    getInventoryValue() {
+        let total = 0
+        for (let product of this.inventory) {
+            total += product.getTotalValue()
+        }
+        return total
+    }
 }
 
