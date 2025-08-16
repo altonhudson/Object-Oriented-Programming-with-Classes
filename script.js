@@ -13,6 +13,14 @@ class productProperties {
     toString() {
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}`;
     }
+
+    static applyDiscount(products, discount) {
+        for (let i = 0; i < products.length; i++) {
+            let product = products[i]
+            product.price = product.price * (1 - discount)
+        }
+    }
+        
 }
 
 let product = new productProperties("Apple", 2.50, 4)
@@ -37,5 +45,13 @@ class perishableProductProperties extends productProperties {
 
 const perishable = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
-console.log(perishable.expirationDate());
-console.log(perishable.toString());
+// console.log(perishable.expirationDate());
+// console.log(perishable.toString());
+
+
+const apple = new productProperties("Apple", 2.50, 4)
+const orange = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
+const watermelon = new perishableProductProperties("watermelon", 4.99, 2, "2025-09-30")
+
+const inventory = [apple, orange, watermelon]
+
