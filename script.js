@@ -1,5 +1,5 @@
 
-class productProperties {
+class ProductProperties {
     constructor(name, price, quantity) {
         this.name = name
         this.price = price
@@ -23,12 +23,12 @@ class productProperties {
         
 }
 
-let product = new productProperties("Apple", 2.50, 4)
+let product = new ProductProperties("Apple", 2.50, 4)
 
 // console.log(product.getTotalValue());
 // console.log(product.toString());
 
-class perishableProductProperties extends productProperties {
+class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expire) {
         super(name, price, quantity)
         this.expire = expire
@@ -43,17 +43,17 @@ class perishableProductProperties extends productProperties {
     }
 }
 
-const perishable = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
+const perishable = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
 // console.log(perishable.expirationDate());
 // console.log(perishable.toString());
 
 
-const apple = new productProperties("Apple", 2.50, 4)
-const orange = new perishableProductProperties("Orange", 1.99, 6, "2025-11-30")
-const watermelon = new perishableProductProperties("Watermelon", 4.99, 2, "2025-09-30")
-const banana = new productProperties("Banana", .59, 8)
-const pineapple = new productProperties("Pineapple", 3.99, 3)
+const apple = new ProductProperties("Apple", 2.50, 4)
+const orange = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
+const watermelon = new PerishableProductProperties("Watermelon", 4.99, 2, "2025-09-30")
+const banana = new ProductProperties("Banana", .59, 8)
+const pineapple = new ProductProperties("Pineapple", 3.99, 3)
 
 const inventory = [apple, orange, watermelon]
 
@@ -65,7 +65,7 @@ const inventory = [apple, orange, watermelon]
 // }
 
 
-class store {
+class Store {
     constructor(name) {
         this.name = name
         this.inventory = []
@@ -93,7 +93,7 @@ class store {
     }
 }
 
-const myStore = new store("My fruit store")
+const myStore = new Store("My fruit store")
 
 
 
@@ -103,7 +103,7 @@ myStore.addProduct(watermelon)
 
 console.log(`Total inventory value: $${myStore.getInventoryValue().toFixed(2)}`);
 
-productProperties.applyDiscount(inventory, 0.15)
+ProductProperties.applyDiscount(inventory, 0.15)
 
 console.log(`Total inventory value after discount: $${myStore.getInventoryValue().toFixed(2)}`);
 
