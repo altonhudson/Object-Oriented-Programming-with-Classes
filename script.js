@@ -5,11 +5,11 @@ class ProductProperties {
         this.price = price
         this.quantity = quantity
     }
-    //Methods
+    //Method to get value of product
     getTotalValue() {
         return this.price * this.quantity
     }
-
+    // Method to return string representation of the products
     toString() {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`
     }
@@ -25,6 +25,7 @@ class ProductProperties {
 
 let product = new ProductProperties("Apple", 2.50, 4)
 
+//Print the ProductProperties Output
 console.log(product.getTotalValue());
 console.log(product.toString());
 
@@ -46,6 +47,7 @@ class PerishableProductProperties extends ProductProperties {
 
 const perishable = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
+//Two instances of PerishableProductProperties Class with sample data
 console.log(perishable.expirationDate());
 console.log(perishable.toString());
 
