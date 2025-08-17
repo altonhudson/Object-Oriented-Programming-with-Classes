@@ -1,15 +1,15 @@
-
+// Base Class Creation
 class ProductProperties {
     constructor(name, price, quantity) {
         this.name = name
         this.price = price
         this.quantity = quantity
     }
-
+    //Methods
     getTotalValue() {
         return this.price * this.quantity
     }
-    
+
     toString() {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`
     }
@@ -20,7 +20,7 @@ class ProductProperties {
             product.price = product.price * (1 - discount)
         }
     }
-        
+
 }
 
 let product = new ProductProperties("Apple", 2.50, 4)
@@ -35,7 +35,7 @@ class PerishableProductProperties extends ProductProperties {
     }
 
     expirationDate() {
-         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expire}`
+        return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expire}`
     }
 
     toString() {
@@ -74,7 +74,7 @@ class Store {
     addProduct(product) {
         this.inventory.push(product);
     }
-    
+
     getInventoryValue() {
         let total = 0
         for (let product of this.inventory) {
@@ -112,6 +112,6 @@ console.log(`Total inventory value after discount: $${myStore.getInventoryValue(
 const found = myStore.findProductByName("pineapple")
 if (found) {
     console.log(`Found product: ${found.toString()}`);
-}else {
+} else {
     console.log("Product not found");
 }
