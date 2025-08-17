@@ -25,8 +25,8 @@ class ProductProperties {
 
 let product = new ProductProperties("Apple", 2.50, 4)
 
-// console.log(product.getTotalValue());
-// console.log(product.toString());
+console.log(product.getTotalValue());
+console.log(product.toString());
 
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expire) {
@@ -45,8 +45,8 @@ class PerishableProductProperties extends ProductProperties {
 
 const perishable = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
-// console.log(perishable.expirationDate());
-// console.log(perishable.toString());
+console.log(perishable.expirationDate());
+console.log(perishable.toString());
 
 
 const apple = new ProductProperties("Apple", 2.50, 4)
@@ -59,10 +59,10 @@ const inventory = [apple, orange, watermelon]
 
 
 
-// console.log("Discounted price:")
-// for (let p of inventory) {
-//     console.log(p.toString())
-// }
+console.log("Discounted price:")
+for (let p of inventory) {
+    console.log(p.toString())
+}
 
 
 class Store {
