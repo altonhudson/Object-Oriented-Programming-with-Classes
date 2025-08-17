@@ -65,17 +65,17 @@ for (let p of inventory) {
     console.log(p.toString())
 }
 
-
+//Store Management
 class Store {
     constructor(name) {
         this.name = name
         this.inventory = []
     }
-
+    //Method to Add Product
     addProduct(product) {
         this.inventory.push(product);
     }
-
+    //Method to return total value of products in inventory
     getInventoryValue() {
         let total = 0
         for (let product of this.inventory) {
@@ -83,7 +83,7 @@ class Store {
         }
         return total
     }
-
+    //Method to find product by Name
     findProductByName(name) {
         for (let product of this.inventory) {
             if (product.name.toLowerCase() === name.toLowerCase()) {
