@@ -13,7 +13,7 @@ class ProductProperties {
     toString() {
         return `Product: ${this.name}, Price: $${this.price.toFixed(2)}, Quantity: ${this.quantity}`
     }
-
+    //Static Method
     static applyDiscount(products, discount) {
         for (let i = 0; i < products.length; i++) {
             let product = products[i]
@@ -49,7 +49,7 @@ const perishable = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-3
 console.log(perishable.expirationDate());
 console.log(perishable.toString());
 
-
+//Input for Array of products
 const apple = new ProductProperties("Apple", 2.50, 4)
 const orange = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 const watermelon = new PerishableProductProperties("Watermelon", 4.99, 2, "2025-09-30")
@@ -59,7 +59,7 @@ const pineapple = new ProductProperties("Pineapple", 3.99, 3)
 const inventory = [apple, orange, watermelon]
 
 
-
+// Output of discounted products
 console.log("Discounted price:")
 for (let p of inventory) {
     console.log(p.toString())
