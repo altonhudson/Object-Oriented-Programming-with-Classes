@@ -28,12 +28,13 @@ let product = new ProductProperties("Apple", 2.50, 4)
 console.log(product.getTotalValue());
 console.log(product.toString());
 
+//Subclass Creation
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expire) {
         super(name, price, quantity)
         this.expire = expire
     }
-
+    // Subclass Methods
     expirationDate() {
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expire}`
     }
