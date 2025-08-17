@@ -97,7 +97,7 @@ class Store {
 const myStore = new Store("My fruit store")
 
 
-
+//Testing the System
 myStore.addProduct(apple)
 myStore.addProduct(orange)
 myStore.addProduct(watermelon)
@@ -106,10 +106,11 @@ myStore.addProduct(pineapple)
 
 console.log(`Total inventory value: $${myStore.getInventoryValue().toFixed(2)}`);
 
+//Add 15% Discount
 ProductProperties.applyDiscount(inventory, 0.15)
-
 console.log(`Total inventory value after discount: $${myStore.getInventoryValue().toFixed(2)}`);
 
+//Verify product exists
 const found = myStore.findProductByName("pineapple")
 if (found) {
     console.log(`Found product: ${found.toString()}`);
