@@ -47,7 +47,7 @@ class PerishableProductProperties extends ProductProperties {
 
 const perishable = new PerishableProductProperties("Orange", 1.99, 6, "2025-11-30")
 
-//Two instances of PerishableProductProperties Class with sample data
+//Two instances of PerishableProductProperties Class with sample
 console.log(perishable.expirationDate());
 console.log(perishable.toString());
 
@@ -60,6 +60,8 @@ const pineapple = new ProductProperties("Pineapple", 3.99, 3)
 
 const inventory = [apple, orange, watermelon]
 
+
+ProductProperties.applyDiscount(inventory, 0.10);
 
 // Output of discounted products
 console.log("Discounted price:")
